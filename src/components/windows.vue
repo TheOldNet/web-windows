@@ -1,7 +1,32 @@
 <template>
     <div class="windows">
         <server-stats />
-        <hsc-window-style-metal v-for="app in apps" :key="app.title">
+
+
+<div class="window" style="width: 300px" v-for="app in apps" :key="app.title">
+  <div class="title-bar">
+    <div class="title-bar-text">{{app.title}}</div>
+    <div class="title-bar-controls">
+      <button aria-label="Minimize"></button>
+      <button aria-label="Maximize"></button>
+      <button aria-label="Close"></button>
+    </div>
+  </div>
+  <div class="window-body">
+    <div @click="setBlockPointerEvents(false)" class="iframe-wrapper">
+                    <iframe 
+                        :src="app.url" 
+                        class="iframe" 
+                        :ref="app.title + 'iframe'" 
+                        :scrolling="app.scrolling" 
+                        v-on:mouseleave="mouseLeaveHandler"
+                        :class="{ blockPointerEvents : blockPointerEvents }"
+                    ></iframe>
+                </div>
+  </div>
+</div>
+        
+        <!-- <hsc-window-style-metal v-for="app in apps" :key="app.title">
             <hsc-window 
                 :title="app.title" 
                 :resizable="true" 
@@ -27,9 +52,8 @@
                 @move-end="wasMoved(app)"
             >
 
-                <!-- see how to do this using grid instead https://jsfiddle.net/drosslol/25ohvs01/ -->
                 <template slot="title">
-                    <div v-on:mouseleave="mouseLeaveHandler" class="title-bar">
+                    <div v-on:mouseleave="mouseLeaveHandler" class="title-bar-theoldnet">
                         <span class="title-icons">
                             <img :src="app.icon" class="icon-title">
                         </span>
@@ -55,7 +79,7 @@
                 </div>
 
             </hsc-window>
-        </hsc-window-style-metal>
+        </hsc-window-style-metal> -->
 
         <hsc-window-style-metal>
             <hsc-window title="Add New Application" :closeButton="true" :isOpen.sync="showAddApp">
@@ -173,7 +197,7 @@ body {
     padding: .1rem;
 }
 
-.title-bar {
+.title-bar-theoldnet {
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -385,6 +409,8 @@ th {
 }
 </style>
 <script>
+
+import "98.css";
 
 import * as _ from 'lodash'
 import Stats from './stats.js'
