@@ -2,31 +2,67 @@
     <div class="windows">
         <server-stats />
 
+            <hsc-window-style-theoldnet  v-for="app in apps" :key="app.title">
+                <hsc-window 
+                    :title="app.title" 
+                    :resizable="true" 
+                    :minWidth="app.minWidth"
+                    :minHeight="app.minHeight"
+                    :isScrollable="false"
+                    :closeButton="false" 
+                    :isOpen="app.state.isOpen"
+                    :activateWhenOpen="true"
+                    :xpositionHint="app.positionHint"
+                    :width="app.width" 
+                    :height="app.height" 
+                    :top="app.top"
+                    :left="app.left"
+                    v-on:closebuttonclick="closeButton(app)"
+                    v-on:activate="setActive(app)"
+                    :ref="app.title"
+                    v-if="app.state.isRunning"
+                    @click="setBlockPointerEvents(false)"
+                    @resize-start="setBlockPointerEvents(true)" 
+                    @resize-end="wasResized(app)" 
+                    @move-start="setBlockPointerEvents(true)" 
+                    @move-end="wasMoved(app)"
+                    class="window"
+                >
 
-<div class="window" style="width: 300px" v-for="app in apps" :key="app.title">
-  <div class="title-bar">
-    <div class="title-bar-text">{{app.title}}</div>
-    <div class="title-bar-controls">
-      <button aria-label="Minimize"></button>
-      <button aria-label="Maximize"></button>
-      <button aria-label="Close"></button>
-    </div>
-  </div>
-  <div class="window-body">
-    <div @click="setBlockPointerEvents(false)" class="iframe-wrapper">
-                    <iframe 
-                        :src="app.url" 
-                        class="iframe" 
-                        :ref="app.title + 'iframe'" 
-                        :scrolling="app.scrolling" 
-                        v-on:mouseleave="mouseLeaveHandler"
-                        :class="{ blockPointerEvents : blockPointerEvents }"
-                    ></iframe>
-                </div>
-  </div>
-</div>
+                    <template slot="title">
+                        <div class="title-bar">
+                            <div class="title-bar-text">{{app.title}}</div>
+                            <div class="title-bar-controls">
+                            <button aria-label="Minimize" @click="toggleMinimize(app)"></button>
+                            <button aria-label="Maximize" @click="toggleMaximize(app)"></button>
+                            <button aria-label="Close" @click="closeButton(app)"></button>
+                            </div>
+                        </div>
+                    </template>
+
+                    <div class="window-body">
+                        <div @click="setBlockPointerEvents(false)" class="iframe-wrapper">
+                            <iframe 
+                                :src="app.url" 
+                                class="iframe" 
+                                :ref="app.title + 'iframe'" 
+                                :scrolling="app.scrolling" 
+                                v-on:mouseleave="mouseLeaveHandler"
+                                :class="{ blockPointerEvents : blockPointerEvents }"
+                            ></iframe>
+                        </div>
+                    </div>
+
+                    <div class="status-bar">
+                        <p class="status-bar-field">Press F1 for help</p>
+                        <p class="status-bar-field">Slide 1</p>
+                        <p class="status-bar-field">CPU Usage: 14%</p>
+                    </div>
+
+                </hsc-window>
+            </hsc-window-style-theoldnet>
         
-        <!-- <hsc-window-style-metal v-for="app in apps" :key="app.title">
+        <!-- <hsc-window-style-theoldnet v-for="app in apps" :key="app.title">
             <hsc-window 
                 :title="app.title" 
                 :resizable="true" 
@@ -79,7 +115,7 @@
                 </div>
 
             </hsc-window>
-        </hsc-window-style-metal> -->
+        </hsc-window-style-theoldnet> -->
 
         <hsc-window-style-metal>
             <hsc-window title="Add New Application" :closeButton="true" :isOpen.sync="showAddApp">

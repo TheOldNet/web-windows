@@ -28,6 +28,46 @@ Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.config.productionTip = false
 
 Vue.use(VueWindow)
+
+Vue.component('hsc-window-style-theoldnet', VueWindow.StyleFactory( { 
+  
+  window: {
+    color: '#000',
+    boxShadow: '0 2pt 4pt rgba(0, 0, 0, 0.5)',
+    backgroundColor: 'rgba(239, 239, 239, 0.95)',
+    padding: 0,
+    marging: 0,
+    border: 0,
+    borderRadius: 0,    
+  },
+
+  titlebar: {
+    backgroundColor: '#ff0000',
+    color: '#ffffff',
+    padding: 0,
+    marging: 0,
+    border: 0,
+    borderRadius: 0,
+  },
+
+  content: {
+  },
+
+  button: {
+    color: '#ffffff'
+  },
+
+  buttonHover: {
+    backgroundColor: 'rgba(0, 0, 0, 0.25)'
+  },
+
+  buttonActive: {
+    color: '#fff',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)'
+  }
+
+} ) )
+
 Vue.use(VueRouter)
 
 const router = new VueRouter({
