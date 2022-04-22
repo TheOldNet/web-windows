@@ -1,5 +1,7 @@
 # wwwerd-windows
 
+![](https://raw.githubusercontent.com/TheOldNet/web-windows/main/public/screenshot.png)
+
 https://www.youtube.com/watch?v=gOhuuSuPsMc
 
 ## Project setup
