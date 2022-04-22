@@ -31,8 +31,9 @@ Vue.use(VueWindow)
 Vue.use(VueRouter)
 
 const router = new VueRouter({
-  mode: 'history',
+  //mode: 'history',
   // base: __dirname,
+  base: '/desktop',
   routes: [
     { path: '/', component: Windows },
     { path: '/notepad', component: Notepad },

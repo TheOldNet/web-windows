@@ -439,7 +439,7 @@ export default {
                 {
                     title: 'System Info',
                     icon: iconInfo,
-                    url: './sysinfo',
+                    url: './#sysinfo',
                     width: 600,
                     height: 400,
                     minWidth: 400,
@@ -520,7 +520,7 @@ export default {
                 {
                     title: 'Notepad',
                     icon: iconNotepad,
-                    url: './notepad',
+                    url: './#notepad',
                     width: 600,
                     height: 500,
                     minWidth: 100,
