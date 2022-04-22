@@ -45,7 +45,7 @@
                         </div>
                     </template>
 
-                    <div class="window-body">
+                    <!-- <div class="window-body"> -->
                         <div @click="setBlockPointerEvents(false)" class="iframe-wrapper">
                             <iframe 
                                 :src="app.url" 
@@ -56,13 +56,13 @@
                                 :class="{ blockPointerEvents : blockPointerEvents }"
                             ></iframe>
                         </div>
-                    </div>
-
+                    <!-- </div> -->
+<!-- 
                     <div class="status-bar">
                         <p class="status-bar-field">Press F1 for help</p>
                         <p class="status-bar-field">Slide 1</p>
                         <p class="status-bar-field">CPU Usage: 14%</p>
-                    </div>
+                    </div> -->
 
                 </hsc-window>
             </hsc-window-style-theoldnet>
