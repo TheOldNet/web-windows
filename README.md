@@ -1,4 +1,4 @@
-# wwwerd-windows
+# The Old Net - Web Windows
 
 ![](https://raw.githubusercontent.com/TheOldNet/web-windows/main/public/screenshot.png)
 
