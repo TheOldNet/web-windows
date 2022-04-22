@@ -31,11 +31,16 @@
 
                     <template slot="title">
                         <div class="title-bar">
-                            <div class="title-bar-text">{{app.title}}</div>
+                            <div class="title-bar-text">
+                                <span class="title-icons">
+                                    <img :src="app.icon" class="icon-title"> {{app.title}}
+                                </span>
+                                
+                            </div>
                             <div class="title-bar-controls">
-                            <button aria-label="Minimize" @click="toggleMinimize(app)"></button>
-                            <button aria-label="Maximize" @click="toggleMaximize(app)"></button>
-                            <button aria-label="Close" @click="closeButton(app)"></button>
+                                <button aria-label="Minimize" @click="toggleMinimize(app)"></button>
+                                <button aria-label="Maximize" @click="toggleMaximize(app)"></button>
+                                <button aria-label="Close" @click="closeButton(app)"></button>
                             </div>
                         </div>
                     </template>
@@ -223,8 +228,8 @@ body {
 }
 
 .icon-title {
-    width: 18px;
-    height: 18px;
+    width: 14px;
+    height: 14px;
     padding: 0;
     margin: 0;
 }
@@ -239,13 +244,11 @@ body {
     width: 100%;
 }
 
-.title {
-    /* border: 1px solid red; */
+/* .title {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* padding: 2px; */
-}
+} */
 
 .title-icons {
     width: 100px;

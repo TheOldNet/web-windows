@@ -64,7 +64,6 @@
 
     button {
         padding: 10px 20px;
-        margin-top: 10px;
         font-size: 1rem;
     }
 

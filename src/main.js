@@ -54,7 +54,8 @@ Vue.component('hsc-window-style-theoldnet', VueWindow.StyleFactory( {
   },
 
   button: {
-    color: '#ffffff'
+    color: '#ffffff',
+    marginTop: 0
   },
 
   buttonHover: {
