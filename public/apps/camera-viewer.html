@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <style>
+            body {
+                padding: 0;
+                margin: 0;
+                text-align:center;
+                background: rgb(58, 58, 58) url("loading2.gif") no-repeat;
+                background-size: 64px 64px;
+                background-position: center;                 
+            }
+
+            .camera-viewer{
+                height:auto;
+                width:100%;
+            }
+
+        </style>
+    </head>
+    <body>
+        <img class="camera-viewer" alt="" onerror="this.onerror=null;reload()" id="camera-viewer">
+        <script>
+        
+            let reload = () => {
+                console.log('reloading in 1 second')
+                setTimeout(() => {
+                    location.reload()
+                    document.body.style.backgroundColor = 'red';
+                }, 5000)
+            }
+            
+            let params = location.search
+                        .slice(1)
+                        .split('&')
+                        .map(p => p.split('='))
+                        .reduce((obj, pair) => {
+                            const [key, value] = pair.map(decodeURIComponent);
+                            return ({ ...obj, [key]: value })
+                        }, {});
+
+            let image = document.getElementById("camera-viewer");
+            image.src = params.src
+
+            var hidden, visibilityChange; 
+            if (typeof document.hidden !== "undefined") { // Opera 12.10 and Firefox 18 and later support 
+                hidden = "hidden";
+                visibilityChange = "visibilitychange";
+            } else if (typeof document.msHidden !== "undefined") {
+                hidden = "msHidden";
+                visibilityChange = "msvisibilitychange";
+            } else if (typeof document.webkitHidden !== "undefined") {
+                hidden = "webkitHidden";
+                visibilityChange = "webkitvisibilitychange";
+            }
+
+
+            document.addEventListener("visibilitychange", handleVisibilityChange, false);
+            function handleVisibilityChange() {
+                if (document[hidden]) {
+                } else {
+                    location.reload()
+                }
+            }
+            
+        </script>
+    </body>
+</html>
+
