@@ -407,6 +407,7 @@ import * as iconPlex from '../assets/icons/plex.png'
 import * as iconCommodore from '../assets/icons/commodore2.png'
 import * as iconInfo from '../assets/icons/info.png'
 import * as iconHDD from '../assets/icons/hdd2.png'
+import * as iconDialup from '../assets/icons/dialup.png'
 
 import addNewApp from './add-new-app'
 
@@ -581,6 +582,22 @@ export default {
                     state: this.defaultState(),
                     scrolling: 'yes',
                 },
+                {
+                    title: 'Retro Campus BBS',
+                    icon: iconDialup,
+                    url: 'http://bbs.retrocampus.com',
+                    width: 1000,
+                    height: 700,
+                    minWidth: 100,
+                    minHeight: 100,
+                    top: 0,
+                    left: 0,
+                    positionHint: '20 / 500',
+                    resizable: true,
+                    state: this.defaultState(),
+                    scrolling: 'yes',
+                },                
+                
             ]
         }
     },
