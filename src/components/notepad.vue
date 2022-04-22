@@ -30,7 +30,7 @@
                 console.log("not implimented");
             }, 1000),
             loadNote() {
-                var data = ''
+                var data = 'https://github.com/TheOldNet/web-windows'
                 return new Promise((resolve, reject) => {
                     console.log("NOT IMPLIMENTED")
                     return resolve(data)
