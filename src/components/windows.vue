@@ -130,15 +130,15 @@
 
         <div class="taskbar-container">
             <div class="taskbar">
-                <div v-for="app in apps" :key="app.title" :tooltip="app.title " class="task" @click="toggleOpen(app)">
+                <button v-for="app in apps" :key="app.title" :tooltip="app.title " class="task" @click="toggleOpen(app)">
                     <img :src="app.icon" alt="" class="icon" v-bind:class="{ 'task-active': app.state.isFocused , 'icon-running': app.state.isRunning, 'icon-minimized': app.state.isRunning && !app.state.isOpen}"/>
                     <!-- <span class="task-title" v-bind:class="{ 'bold': app.state.isRunning, 'minimized': app.state.isRunning && !app.state.isOpen}">{{app.title}}</span> -->
-                </div>
-                <div tooltip="New App" class="add">
+                </button>
+                <button tooltip="New App" class="add">
                     <font-awesome-icon icon="plus" class="add-new-app" @click="showAddApp = !showAddApp"/>
                     <!-- <img :src="app.icon" alt="" class="icon" v-bind:class="{ 'task-active': app.state.isFocused , 'icon-running': app.state.isRunning, 'icon-minimized': app.state.isRunning && !app.state.isOpen}"/> -->
                     <!-- <span class="task-title" v-bind:class="{ 'bold': app.state.isRunning, 'minimized': app.state.isRunning && !app.state.isOpen}">{{app.title}}</span> -->
-                </div>
+                </button>
             </div>
         </div>
     </div>
@@ -305,7 +305,8 @@ body {
     bottom: 0;
     /* width: 50%; */
     /* background: linear-gradient(rgba(90, 90, 90, 0.568), rgba(41, 41, 41, 0.616)); */
-    background: rgba(31, 31, 31, 0.637);
+    /* background: rgba(31, 31, 31, 0.637); */
+    background: #dfdfdf;
     /* background: url('../assets/wallpaper.jpg') no-repeat center center fixed;  */
     color:black;
     display: flex;
@@ -341,7 +342,7 @@ body {
 }
 
 .task-active {
-    background: linear-gradient(rgba(198, 212, 214, .6), rgba(143, 166, 179, .6));
+    /* background: linear-gradient(rgba(198, 212, 214, .6), rgba(143, 166, 179, .6)); */
 }
 
 .task-title{
