@@ -148,11 +148,15 @@
 <style>
 
 .windows{
-    background: url('../assets/wallpaper.jpg') no-repeat center center fixed; 
-    -webkit-background-size: cover;
+    background: url('../assets/wallpaper-setup.jpg'); 
+    /* background-position: center; */
+    /* background-repeat: no-repeat; */
+    background-color: #06869d;
+    /* background-size: contain; */
+    /* -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover;
+    background-size: cover; */
     width: 100vw;
     height: 100vh;
     padding: 0;
