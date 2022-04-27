@@ -1,6 +1,5 @@
 <template>
     <div class="windows">
-        <server-stats />
 
             <hsc-window-style-theoldnet  v-for="app in apps" :key="app.title">
                 <hsc-window 
@@ -66,61 +65,7 @@
 
                 </hsc-window>
             </hsc-window-style-theoldnet>
-        
-        <!-- <hsc-window-style-theoldnet v-for="app in apps" :key="app.title">
-            <hsc-window 
-                :title="app.title" 
-                :resizable="true" 
-                :minWidth="app.minWidth"
-                :minHeight="app.minHeight"
-                :isScrollable="false"
-                :closeButton="false" 
-                :isOpen="app.state.isOpen"
-                :activateWhenOpen="true"
-                :xpositionHint="app.positionHint"
-                :width="app.width" 
-                :height="app.height" 
-                :top="app.top"
-                :left="app.left"
-                v-on:closebuttonclick="closeButton(app)"
-                v-on:activate="setActive(app)"
-                :ref="app.title"
-                v-if="app.state.isRunning"
-                @click="setBlockPointerEvents(false)"
-                @resize-start="setBlockPointerEvents(true)" 
-                @resize-end="wasResized(app)" 
-                @move-start="setBlockPointerEvents(true)" 
-                @move-end="wasMoved(app)"
-            >
 
-                <template slot="title">
-                    <div v-on:mouseleave="mouseLeaveHandler" class="title-bar-theoldnet">
-                        <span class="title-icons">
-                            <img :src="app.icon" class="icon-title">
-                        </span>
-                        <span>{{app.title}}</span>
-                        <span class="title-buttons">
-                            <span class="title-button button-refresh" @click="refreshWindow(app)"><font-awesome-icon icon="redo-alt" /></span>
-                            <span class="title-button button-minimize" @click="toggleMinimize(app)"><font-awesome-icon icon="window-minimize" /></span>
-                            <span v-if="app.resizable" class="title-button button-maximize" @click="toggleMaximize(app)"><font-awesome-icon icon="window-maximize" /></span>
-                            <span class="title-button button-close" @click="closeButton(app)"><font-awesome-icon icon="window-close" /></span>
-                        </span>
-                    </div>
-                </template>
-
-                <div @click="setBlockPointerEvents(false)" class="iframe-wrapper">
-                    <iframe 
-                        :src="app.url" 
-                        class="iframe" 
-                        :ref="app.title + 'iframe'" 
-                        :scrolling="app.scrolling" 
-                        v-on:mouseleave="mouseLeaveHandler"
-                        :class="{ blockPointerEvents : blockPointerEvents }"
-                    ></iframe>
-                </div>
-
-            </hsc-window>
-        </hsc-window-style-theoldnet> -->
 
         <hsc-window-style-metal>
             <hsc-window title="Add New Application" :closeButton="true" :isOpen.sync="showAddApp">
