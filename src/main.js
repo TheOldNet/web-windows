@@ -35,7 +35,7 @@ Vue.component('hsc-window-style-theoldnet', VueWindow.StyleFactory( {
     color: '#000',
     boxShadow: '0 2pt 4pt rgba(0, 0, 0, 0.5)',
     backgroundColor: 'rgba(239, 239, 239, 0.95)',
-    padding: 0,
+    padding: '2px',
     marging: 0,
     border: 0,
     borderRadius: 0,    

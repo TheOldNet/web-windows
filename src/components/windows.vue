@@ -417,12 +417,14 @@ import * as iconGlances from '../assets/icons/glances.png'
 import * as iconTransmission from '../assets/icons/transmission.png'
 import * as iconCamera from '../assets/icons/camera5.png'
 import * as iconMinecraft from '../assets/icons/minecraft.png'
-import * as iconTheOldNet from '../assets/icons/theoldnet.png'
+import * as iconTheOldNet from '../assets/icons/meteors-small.gif'
 import * as iconPlex from '../assets/icons/plex.png'
 import * as iconCommodore from '../assets/icons/commodore2.png'
 import * as iconInfo from '../assets/icons/info.png'
 import * as iconHDD from '../assets/icons/hdd2.png'
 import * as iconDialup from '../assets/icons/dialup.png'
+import * as iconLinks from '../assets/icons/spiral.gif'
+import * as iconVRML from '../assets/icons/vrml.gif'
 
 import addNewApp from './add-new-app'
 
@@ -470,7 +472,7 @@ export default {
                 {
                     title: 'The Old Net',
                     icon: iconTheOldNet,
-                    url: 'https://theoldnet.com/browser',
+                    url: '//theoldnet.com/browser',
                     width: 900,
                     height: 500,
                     minWidth: 100,
@@ -487,7 +489,7 @@ export default {
                 {
                     title: 'Minecraft Map',
                     icon: iconMinecraft,
-                    url: 'https://map.daggasoft.com',
+                    url: '//map.daggasoft.com',
                     width: 900,
                     height: 500,
                     minWidth: 100,
@@ -521,7 +523,7 @@ export default {
                 {
                     title: 'Paint',
                     icon: iconPaint,
-                    url: 'https://jspaint.app/',
+                    url: '//jspaint.app/',
                     width: 800,
                     height: 500,
                     minWidth: 100,
@@ -568,7 +570,7 @@ export default {
                 {
                     title: 'Windows 93',
                     icon: iconWindows,
-                    url: 'https://www.windows93.net/',
+                    url: '//www.windows93.net/',
                     width: 640,
                     height: 407,
                     minWidth: 640,
@@ -585,7 +587,7 @@ export default {
                 {
                     title: 'Super Markup World',
                     icon: iconSuperMarkupWorld,
-                    url: 'http://supermarkupworld.com/game.html',
+                    url: '//supermarkupworld.com/game.html',
                     width: 1000,
                     height: 700,
                     minWidth: 100,
@@ -600,7 +602,7 @@ export default {
                 {
                     title: 'Retro Campus BBS',
                     icon: iconDialup,
-                    url: 'http://bbs.retrocampus.com',
+                    url: '//bbs.retrocampus.com',
                     width: 1000,
                     height: 700,
                     minWidth: 100,
@@ -611,7 +613,38 @@ export default {
                     resizable: true,
                     state: this.defaultState(),
                     scrolling: 'yes',
-                },                
+                },
+                {
+                    title: 'Dem Links',
+                    icon: iconLinks,
+                    url: '//demlinks.com',
+                    width: 600,
+                    height: 700,
+                    minWidth: 100,
+                    minHeight: 100,
+                    top: 50,
+                    left: 250,
+                    positionHint: '20 / 500',
+                    resizable: true,
+                    state: this.defaultState(),
+                    scrolling: 'yes',
+                },
+                {
+                    title: 'Cyber Town',
+                    icon: iconVRML,
+                    url: '//cybertownrevival.com',
+                    width: 1000,
+                    height: 700,
+                    minWidth: 100,
+                    minHeight: 100,
+                    top: 50,
+                    left: 250,
+                    positionHint: '20 / 500',
+                    resizable: true,
+                    state: this.defaultState(),
+                    scrolling: 'yes',
+                },                   
+                    
                 
             ]
         }
@@ -742,7 +775,7 @@ export default {
         },
         wasResized(app){
             const appRef = this.getAppRef(app)
-            console.log(["WAS RESIZED TO DIMENSIONS", appRef.width, appRef.height])
+            console.log(["WAS RESIZED TO DIMENSIONS", appRef.width, appRef.height]) //todo: these values never change
             window.test = appRef
             this.setBlockPointerEvents(false);
         },
